@@ -21,17 +21,30 @@ now="$(date +"%s")"
 diff="$(( (now - lastboot) / 86400 ))"
 
 
-alertcount=14
-warningcount=7
+function handleOptions {
+    alertnumber=14
+    warningnumber=7
+
+    while getopts "a:w:" o; do
+        case "${o}" in
+            a)
+                alertnumber=${OPTARG}
+                ;;
+            w)
+                warningnumber=${OPTARG}
+                ;;
+        esac
+    done
+}
 
 
 function uptimeStatus {
-    if [[ $diff -lt $warningcount ]] # Diff < Warning
+    if [[ $diff -lt $warningnumber ]] # Diff < Warning
     then
         updateTitle "Time since last reboot: $diff day(s)."
         updateState "${STATE[0]}"
         updateTooltip '"Hello, IT. Have you tried turning it off and on again?"'
-    elif [[ $diff -gt $alertcount ]] # Diff > Alert
+    elif [[ $diff -gt $alertnumber ]] # Diff > Alert
     then
         updateTitle "Time since last reboot: $diff day(s)."
         updateState "${STATE[2]}"

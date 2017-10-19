@@ -22,18 +22,31 @@ storageused="$(df / | grep "/" | awk '{print $3}' | sed 's/G//')"
 storagepercentused="$(printf "%.0f\n" "$(bc -l <<< "( $storageused / $storagetotal) * 100")")"
 
 
-alertpercent=90
-warningpercent=70
+function handleOptions {
+    alertnumber=90
+    warningnumber=70
+
+    while getopts "a:w:" o; do
+        case "${o}" in
+            a)
+                alertnumber=${OPTARG}
+                ;;
+            w)
+                warningnumber=${OPTARG}
+                ;;
+        esac
+    done
+}
 
 
 function storageStatus {
     updateTitle "Storage: $storageinfo"
 
-    if [[ "$storagepercentused" -gt "$alertpercent" ]]
+    if [[ "$storagepercentused" -gt "$alertnumber" ]]
     then
         updateState "${STATE[2]}"
         updateTooltip "You are running dangerously low on storage"
-    elif [[ "$storagepercentused" -lt "$warningpercent" ]]
+    elif [[ "$storagepercentused" -lt "$warningnumber" ]]
     then
         updateState "${STATE[0]}"
         updateTooltip "You have plenty of storage available"

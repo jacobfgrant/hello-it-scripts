@@ -18,16 +18,29 @@
 memPressure=$(memory_pressure | tail -1 | sed 's/System-wide memory free percentage: //'| sed 's/%//')
 
 
-alertpercent=10
-warningpercent=33
+function handleOptions {
+    alertnumber=10
+    warningnumber=33
+
+    while getopts "a:w:" o; do
+        case "${o}" in
+            a)
+                alertnumber=${OPTARG}
+                ;;
+            w)
+                warningnumber=${OPTARG}
+                ;;
+        esac
+    done
+}
 
 
 function memoryPressure {
     updateTitle "Memory Free: $memPressure%"
 
-    if [[ $memPressure -le "$alertpercent" ]]; then
+    if [[ $memPressure -le "$alertnumber" ]]; then
         updateState "${STATE[2]}"
-    elif [[ $memPressure -ge "$warningpercent" ]]; then
+    elif [[ $memPressure -ge "$warningnumber" ]]; then
         updateState "${STATE[0]}"
     else
         updateState "${STATE[1]}"
