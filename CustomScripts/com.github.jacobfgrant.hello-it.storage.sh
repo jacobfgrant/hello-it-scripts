@@ -6,6 +6,11 @@
 #  Tooltip: Storage recommendation
 #
 #
+#  Options:
+#    -a: Set alertnumber
+#    -w: Set warningnumber
+#
+#
 #  Created by Jacob F. Grant
 #
 #  Written: 10/17/2017
