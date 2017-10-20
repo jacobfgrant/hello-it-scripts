@@ -2,8 +2,13 @@
 
 #  Display computer uptime status (time since last reboot)
 #
-#  Title: Uptime status
+#  Title: Uptime status (days since last reboot)
 #  Tooltip: Restart recommendation
+#
+#  Status:
+#    Green  - X < warningnumber
+#    Orange - warningnumber < X < alertnumber
+#    Red    - alertnumber < X
 #
 #
 #  Options:
@@ -14,7 +19,7 @@
 #  Created by Jacob F. Grant
 #
 #  Written: 10/17/2017
-#  Updated: 10/18/2017
+#  Updated: 10/19/2017
 
 ### The following line load the Hello IT bash script lib
 . "$HELLO_IT_SCRIPT_FOLDER/com.github.ygini.hello-it.scriptlib.sh"
@@ -65,18 +70,18 @@ function uptimeStatus {
 
 ### This function is called when the user click on your item
 function onClickAction {
-    uptimeStatus "$@"
+    uptimeStatus
 }
 
 ### This function is called when you've set Hello IT to run your script on a regular basis
 function fromCronAction {
-    uptimeStatus "$@"
+    uptimeStatus
 }
 
 ### This function is called when Hello IT need to know the title to display
 ### Use it to provide dynamic title at load.
 function setTitleAction {
-    uptimeStatus "$@"
+    uptimeStatus
 }
 
 ### The only things to do outside of a bash function is to call the main function defined by the Hello IT bash lib.

@@ -6,11 +6,15 @@
 #  Tooltip: Updates recommendation
 #  On-click: Opens Managed Software Center or App store
 #
+#  Status:
+#    Green  - No updates available
+#    Orange - Updates available
+#
 #
 #  Created by Jacob F. Grant
 #
 #  Written: 10/17/2017
-#  Updated: 10/18/2017
+#  Updated: 10/19/2017
 #
 
 ### The following line load the Hello IT bash script lib

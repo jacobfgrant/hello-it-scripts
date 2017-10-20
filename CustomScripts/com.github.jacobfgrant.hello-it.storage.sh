@@ -5,6 +5,11 @@
 #  Title: Storage used, free, and percent used
 #  Tooltip: Storage recommendation
 #
+#  Status:
+#    Green  - X < warningnumber
+#    Orange - warningnumber < X < alertnumber
+#    Red    - alertnumber < X
+#
 #
 #  Options:
 #    -a: Set alertnumber
@@ -14,7 +19,7 @@
 #  Created by Jacob F. Grant
 #
 #  Written: 10/17/2017
-#  Updated: 10/18/2017
+#  Updated: 10/19/2017
 #
 
 ### The following line load the Hello IT bash script lib
