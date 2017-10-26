@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# Set Hello-IT Scripts permissions
+chmod 755 /Library/Application\ Support/com.github.ygini.hello-it/CustomScripts/com.github.jacobfgrant.hello-it.*
