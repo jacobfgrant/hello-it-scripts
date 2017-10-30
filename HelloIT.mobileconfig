@@ -59,7 +59,7 @@
 														<key>settings</key>
 														<dict>
 															<key>script</key>
-															<string>macos-version.sh</string>
+															<string>com.github.jacobfgrant.hello-it.macos-version.sh</string>
 															<key>title</key>
 															<string>macos-version</string>
 														</dict>
@@ -70,7 +70,7 @@
 														<key>settings</key>
 														<dict>
 															<key>script</key>
-															<string>serial-number.sh</string>
+															<string>com.github.jacobfgrant.hello-it.serial-number.sh</string>
 															<key>title</key>
 															<string>serial-number</string>
 														</dict>
@@ -87,7 +87,7 @@
 															<key>repeat</key>
 															<integer>3600</integer>
 															<key>script</key>
-															<string>filevault.sh</string>
+															<string>com.github.jacobfgrant.hello-it.filevault.sh</string>
 															<key>title</key>
 															<string>filevault</string>
 														</dict>
@@ -100,7 +100,7 @@
 															<key>repeat</key>
 															<integer>3600</integer>
 															<key>script</key>
-															<string>uptime.sh</string>
+															<string>com.github.jacobfgrant.hello-it.uptime.sh</string>
 															<key>title</key>
 															<string>uptime</string>
 														</dict>
@@ -113,7 +113,7 @@
 															<key>repeat</key>
 															<integer>1800</integer>
 															<key>script</key>
-															<string>storage.sh</string>
+															<string>com.github.jacobfgrant.hello-it.storage.sh</string>
 															<key>title</key>
 															<string>storage</string>
 														</dict>
@@ -126,7 +126,7 @@
 															<key>repeat</key>
 															<integer>60</integer>
 															<key>script</key>
-															<string>memory-pressure.sh</string>
+															<string>com.github.jacobfgrant.hello-it.memory-pressure.sh</string>
 															<key>title</key>
 															<string>memory-pressure</string>
 														</dict>
@@ -170,7 +170,7 @@
 															<key>repeat</key>
 															<integer>300</integer>
 															<key>script</key>
-															<string>firewall.sh</string>
+															<string>com.github.jacobfgrant.hello-it.firewall.sh</string>
 															<key>title</key>
 															<string>firewall</string>
 														</dict>
@@ -235,7 +235,7 @@
 												<key>repeat</key>
 												<integer>600</integer>
 												<key>script</key>
-												<string>updates.sh</string>
+												<string>com.github.jacobfgrant.hello-it.updates.sh</string>
 												<key>title</key>
 												<string>updates</string>
 											</dict>
