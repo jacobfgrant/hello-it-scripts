@@ -16,6 +16,11 @@
 #    -w: Set warningnumber
 #
 #
+#  Defaults:
+#    alertnumber    =  90
+#    warningnumber  =  70
+#
+#
 #  Created by Jacob F. Grant
 #
 #  Written: 10/17/2017
@@ -31,11 +36,11 @@ storagetotal="$(df / | grep "/" | awk '{print $2}' | sed 's/G//')"
 storageused="$(df / | grep "/" | awk '{print $3}' | sed 's/G//')"
 storagepercentused="$(printf "%.0f\n" "$(bc -l <<< "( $storageused / $storagetotal) * 100")")"
 
+alertnumber=90
+warningnumber=70
+
 
 function handleOptions {
-    alertnumber=90
-    warningnumber=70
-
     while getopts "a:w:" o; do
         case "${o}" in
             a)

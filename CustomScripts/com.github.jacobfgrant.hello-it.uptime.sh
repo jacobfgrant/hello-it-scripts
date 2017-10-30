@@ -16,6 +16,11 @@
 #    -w: Set warningnumber
 #
 #
+#  Defaults:
+#    alertnumber    =  14
+#    warningnumber  =  7
+#
+#
 #  Created by Jacob F. Grant
 #
 #  Written: 10/17/2017
@@ -30,11 +35,11 @@ lastboot="$(date -r "$(sysctl -n kern.boottime | awk '{print $4}' | sed 's/,//')
 now="$(date +"%s")"
 diff="$(( (now - lastboot) / 86400 ))"
 
+alertnumber=14
+warningnumber=7
+
 
 function handleOptions {
-    alertnumber=14
-    warningnumber=7
-
     while getopts "a:w:" o; do
         case "${o}" in
             a)

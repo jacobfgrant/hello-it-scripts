@@ -15,6 +15,11 @@
 #    -w: Set warningnumber
 #
 #
+#  Defaults:
+#    alertnumber    =  10
+#    warningnumber  =  33
+#
+#
 #  Created by Jacob F. Grant
 #
 #  Written: 10/17/2017
@@ -27,11 +32,11 @@
 
 memPressure=$(memory_pressure | tail -1 | sed 's/System-wide memory free percentage: //'| sed 's/%//')
 
+alertnumber=10
+warningnumber=33
+
 
 function handleOptions {
-    alertnumber=10
-    warningnumber=33
-
     while getopts "a:w:" o; do
         case "${o}" in
             a)
