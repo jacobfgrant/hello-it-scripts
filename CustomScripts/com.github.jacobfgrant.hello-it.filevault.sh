@@ -24,7 +24,7 @@ filevaultstatus=$(/usr/bin/fdesetup status)
 
 
 function filvaultStatus {
-    if [ "$firewallstate" = "FileVault is On." ]
+    if [ "$filevaultstatus" = "FileVault is On." ]
     then
         updateTitle "FileVault is ON"
         updateState "${STATE[0]}"
