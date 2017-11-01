@@ -22,11 +22,20 @@
 
 
 function updatesAvailable {
+    appleUpdateCount=$(defaults read /Library/Preferences/com.apple.SoftwareUpdate.plist LastRecommendedUpdatesAvailable)
+
     if [ -f "/Library/Preferences/ManagedInstalls.plist" ]
     then
-        updatesCount=$(defaults read /Library/Preferences/ManagedInstalls.plist PendingUpdateCount)
+        munkiUpdateCount=$(defaults read /Library/Preferences/ManagedInstalls.plist PendingUpdateCount)
+        
+        if $(defaults read /Library/Preferences/ManagedInstalls.plist | grep -Fq "InstallAppleSoftwareUpdates = 1;")
+        then
+            updatesCount="$munkiUpdatesCount"
+        else
+            updatesCount=$(($munkiUpdateCount + $appleUpdateCount))
+        fi
     else
-        updatesCount=$(defaults read /Library/Preferences/com.apple.SoftwareUpdate.plist LastRecommendedUpdatesAvailable)
+        updateCount="$appleUpdateCount"
     fi
 
     if [ "$updatesCount" -eq 0 ]
