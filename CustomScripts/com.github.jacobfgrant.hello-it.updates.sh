@@ -26,12 +26,14 @@ function updatesAvailable {
 
     if [ -f "/Library/Preferences/ManagedInstalls.plist" ]
     then
+        updatesClient="Managed Software Center"
         munkiUpdateCount=$(defaults read /Library/Preferences/ManagedInstalls.plist PendingUpdateCount)
         
         if $(defaults read /Library/Preferences/ManagedInstalls.plist | grep -Fq "InstallAppleSoftwareUpdates = 1;")
         then
             updatesCount="$munkiUpdatesCount"
         else
+            updatesClient="the App Store"
             updatesCount=$(($munkiUpdateCount + $appleUpdateCount))
         fi
     else
@@ -47,7 +49,7 @@ function updatesAvailable {
     else
         updateTitle "$updatesCount Updates Available"
         updateState "${STATE[1]}"
-        updateTooltip "Click to open Managed Software Center and install updates"
+        updateTooltip "Click to open $updatesClient and install updates"
     fi
 }
 
