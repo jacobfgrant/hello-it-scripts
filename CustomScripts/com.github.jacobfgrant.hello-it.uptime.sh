@@ -69,7 +69,6 @@ function uptimeStatus {
         updateState "${STATE[1]}"
         updateTooltip "Please restart your computer"
     fi
-
 }
 
 
