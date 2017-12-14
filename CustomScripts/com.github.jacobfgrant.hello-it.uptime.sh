@@ -17,8 +17,8 @@
 #
 #
 #  Defaults:
-#    alertnumber    =  14
-#    warningnumber  =  7
+#    alertnumber    =  30
+#    warningnumber  =  15
 #
 #
 #  Created by Jacob F. Grant
@@ -35,8 +35,8 @@ lastboot="$(date -r "$(sysctl -n kern.boottime | awk '{print $4}' | sed 's/,//')
 now="$(date +"%s")"
 diff="$(( (now - lastboot) / 86400 ))"
 
-alertnumber=14
-warningnumber=7
+alertnumber=30
+warningnumber=15
 
 
 function handleOptions {

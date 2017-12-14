@@ -17,7 +17,7 @@
 #
 #  Defaults:
 #    alertnumber    =  10
-#    warningnumber  =  33
+#    warningnumber  =  25
 #
 #
 #  Created by Jacob F. Grant
@@ -33,7 +33,7 @@
 memPressure=$(memory_pressure | tail -1 | sed 's/System-wide memory free percentage: //'| sed 's/%//')
 
 alertnumber=10
-warningnumber=33
+warningnumber=25
 
 
 function handleOptions {

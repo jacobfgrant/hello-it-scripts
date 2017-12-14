@@ -18,7 +18,7 @@
 #
 #  Defaults:
 #    alertnumber    =  90
-#    warningnumber  =  70
+#    warningnumber  =  75
 #
 #
 #  Created by Jacob F. Grant
@@ -37,7 +37,7 @@ storageused="$(df / | grep "/" | awk '{print $3}' | sed 's/G//')"
 storagepercentused="$(printf "%.0f\n" "$(bc -l <<< "( $storageused / $storagetotal) * 100")")"
 
 alertnumber=90
-warningnumber=70
+warningnumber=75
 
 
 function handleOptions {
