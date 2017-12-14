@@ -14,10 +14,10 @@
 #  Created by Jacob F. Grant
 #
 #  Written: 11/13/2017
-#  Updated: 11/13/2017
+#  Updated: 12/14/2017
 
 ### The following line load the Hello IT bash script lib
-. "$HELLO_IT_SCRIPT_FOLDER/com.github.ygini.hello-it.scriptlib.sh"
+. "$HELLO_IT_SCRIPT_SH_LIBRARY/com.github.ygini.hello-it.scriptlib.sh"
 
 
 function checkOneDriveStatus {

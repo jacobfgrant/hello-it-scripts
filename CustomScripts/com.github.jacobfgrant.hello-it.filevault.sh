@@ -13,11 +13,11 @@
 #  Created by Jacob F. Grant
 #
 #  Written: 10/17/2017
-#  Updated: 10/19/2017
+#  Updated: 12/14/2017
 #
 
 ### The following line load the Hello IT bash script lib
-. "$HELLO_IT_SCRIPT_FOLDER/com.github.ygini.hello-it.scriptlib.sh"
+. "$HELLO_IT_SCRIPT_SH_LIBRARY/com.github.ygini.hello-it.scriptlib.sh"
 
 
 filevaultstatus=$(/usr/bin/fdesetup status)
